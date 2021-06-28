@@ -3,6 +3,7 @@ volumes:
   php-fpm-socket:
   db-store:
   psysh-store:
+  pma-session-store:
 services:
   app:
     build:
@@ -27,8 +28,8 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
       - DB_DATABASE=${DB_NAME:-laravel_local}
-      - DB_USERNAME=${DB_USER:-phper}
-      - DB_PASSWORD=${DB_PASS:-secret}
+      - DB_USERNAME=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASS:-root}
 
   web:
     build:
@@ -66,6 +67,23 @@ services:
           nocopy: true
     environment:
       - MYSQL_DATABASE=${DB_NAME:-laravel_local}
-      - MYSQL_USER=${DB_USER:-phper}
-      - MYSQL_PASSWORD=${DB_PASS:-secret}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
+      - MYSQL_USER=${DB_USER:-root}
+      - MYSQL_PASSWORD=${DB_PASS:-root}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS:-root}
+
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+### phpMyAdmin ###########################################
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - 8080:80
+    volumes:
+      # nocopy: true
+      - pma-session-store:/sessions
