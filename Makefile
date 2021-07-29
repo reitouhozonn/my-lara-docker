@@ -6,6 +6,7 @@ laravel-install:
 	docker compose exec app composer create-project --prefer-dist laravel/laravel .
 create-project:
 	mkdir -p backend
+	cp .env.example .env
 	@make build
 	@make up
 	@make laravel-install
