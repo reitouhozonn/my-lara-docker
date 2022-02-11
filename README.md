@@ -1,9 +1,5 @@
 # docker-laravel
 
-![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/ucan-lab/docker-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/ucan-lab/docker-laravel?color=f05340)
 
 ## Introduction
 
@@ -19,11 +15,6 @@ $ make create-project # Install the latest Laravel project
 
 http://localhost
 
-## Tips
-
-- Read this [Makefile](https://github.com/ucan-lab/docker-laravel/blob/main/Makefile).
-- Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
-
 ## Container structures
 
 ```bash
@@ -35,8 +26,8 @@ http://localhost
 ### app container
 
 - Base image
-  - [php](https://hub.docker.com/_/php):8.0-fpm-buster
-  - [composer](https://hub.docker.com/_/composer):2.0
+  - [php](https://hub.docker.com/_/php):8.1-fpm-buster
+  - [composer](https://hub.docker.com/_/composer):2.1
 
 ### web container
 

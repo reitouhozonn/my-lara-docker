@@ -1,5 +1,5 @@
 FROM php:8.1-fpm-bullseye
-LABEL maintainer="ucan-lab <yes@u-can.pro>"
+
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 # timezone environment
@@ -12,7 +12,7 @@ ENV TZ=Asia/Tokyo \
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
-COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.1 /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && \
   apt-get -y install git libicu-dev libonig-dev libzip-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev unzip locales && \
