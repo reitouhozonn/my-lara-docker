@@ -1,4 +1,4 @@
-# docker-laravel 🐳
+# docker-laravel
 
 ![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
 ![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
