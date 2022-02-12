@@ -15,6 +15,12 @@ $ make create-project # Install the latest Laravel project
 
 http://localhost
 
+MyAdmin
+http://localhost:8080
+
+MailHog
+http://localhost:8025
+
 ## Container structures
 
 ```bash
